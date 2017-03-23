@@ -5,17 +5,17 @@ var data = [
     {
         name: "Cloud's Rest",
         image: "http://i.imgur.com/nGSZnHN.jpg",
-        description: "A nice place to camp with great sky views"
+        description: "A nice place to camp with great sky views."
     },
     {
         name: "Granite Mountain's Rest",
         image: "https://s-media-cache-ak0.pinimg.com/originals/9a/85/d8/9a85d8b22e42dd423da0afce92b43d28.jpg",
-        description: "A nice place to camp with great mountain views"
+        description: "A nice place to camp with great mountain views."
     },
     {
         name: "Lake's Rest",
         image: "http://www.lake-lewisville.org/wp-content/uploads/2012/07/Sycamore-Bend-Campgrounds-2.jpg",
-        description: "A nice place to camp with great mountain views"
+        description: "A nice place to camp with great lake views."
     },
     ];
 
@@ -28,6 +28,15 @@ function seedDB(){
         console.log("removed campgrounds");
     });
     //add a few campgrounds
+    data.forEach(function(seed){
+        Campground.create(seed, function(err, data){
+            if(err){
+                console.log(err);
+            }else{
+                console.log("added a campgroud");
+            }
+        });
+    });
     Campground.create
     
     //add a few comments
