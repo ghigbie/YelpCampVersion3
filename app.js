@@ -3,7 +3,7 @@ var express     = require("express"),
     bodyParser  = require("body-parser"),
     request     = require("request"),
     mongoose    = require("mongoose"),
-    Campground  = require("./models/campground");
+    Campground  = require("./models/campgrounds");
 
 mongoose.connect("mongodb://localhost/yelp_camp");
 
