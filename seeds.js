@@ -25,19 +25,19 @@ function seedDB(){
         if(err){
             console.log(err);
         }
-        console.log("removed campgrounds");
-    });
+        console.log("Removed campgrounds!");
+        
     //add a few campgrounds
-    data.forEach(function(seed){
-        Campground.create(seed, function(err, data){
-            if(err){
-                console.log(err);
-            }else{
-                console.log("added a campgroud");
-            }
+        data.forEach(function(seed){  //this is inside of the callback so that to keep it called in the right order
+            Campground.create(seed, function(err, data){
+                if(err){
+                    console.log(err);
+                }else{
+                    console.log("added a campgroud");
+                }
+            });
         });
     });
-    Campground.create
     
     //add a few comments
 }
