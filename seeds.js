@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Campground = require("./models/campground");
-const Comment = require("./models/commet");
+const Comment = require("./models/comment");
 
 var data = [
     {
@@ -34,7 +34,7 @@ function seedDB(){
                 if(err){
                     console.log(err);
                 }else{
-                    console.log("added a campgroud");
+                    console.log("Added a campgroud.");
                     //create a comment on each created campground
                     Comment.create(
                         {
@@ -44,14 +44,9 @@ function seedDB(){
                             if(err){
                                 console.log(err);
                             }else{
-                                console.log("Comment posted!");
-                                if(err){
-                                    console.log(err);
-                                }else{
-                                    campground.comments.push(comment);
-                                    campground.save();
-                                    console.log("Comment posted and associated!");
-                                }
+                                campground.comments.push(comment);
+                                campground.save();
+                                console.log("Created new comment!");
                             }
                         });
                 }
