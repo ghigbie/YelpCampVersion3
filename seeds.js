@@ -29,11 +29,30 @@ function seedDB(){
         
     //add a few campgrounds
         data.forEach(function(seed){  //this is inside of the callback so that to keep it called in the right order
-            Campground.create(seed, function(err, data){
+            Campground.create(seed, function(err, campground){
                 if(err){
                     console.log(err);
                 }else{
                     console.log("added a campgroud");
+                    //create a comment on each created campground
+                    Comment.create(
+                        {
+                            text: "This place is great, but I wish it had wifi :)",
+                            author: "Homer of the Illiad"
+                        }, function(err, comment){
+                            if(err){
+                                console.log(err);
+                            }else{
+                                console.log("Comment posted!");
+                                if(err){
+                                    console.log(err);
+                                }else{
+                                    campground.comments.push(comment);
+                                    campground.save();
+                                    console.log("Comment posted and associated!");
+                                }
+                            }
+                        });
                 }
             });
         });
