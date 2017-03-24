@@ -14,10 +14,10 @@ var data = [
         description: "A nice place to camp with great mountain views."
     },
     {
-        name: "Lake's Rest",
+        name: "Lake's End",
         image: "http://www.lake-lewisville.org/wp-content/uploads/2012/07/Sycamore-Bend-Campgrounds-2.jpg",
         description: "A nice place to camp with great lake views."
-    },
+    }
     ];
 
 function seedDB(){
