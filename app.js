@@ -15,6 +15,10 @@ app.get("/", function(req, res){
     res.render("landing");
 });
 
+app.get("/search", function(req, res){
+    res.render("search");
+});
+
 
 //INDEX - show all campgrounds
 app.get("/campgrounds", function(req, res){
